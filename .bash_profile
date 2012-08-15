@@ -61,7 +61,7 @@ function ssh-setup {
 # alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias dotfiles.bash_profile=='sublime ~/.bash_profile'
 alias dotfiles.autotest='sublime ~/.autotest'
-alias dotfiles.push='cd ~/ && git commit -am "updating dot files"'
+alias dotfiles.push='cd ~/ && git commit -am "updating dot files" && git push origin master'
 alias reload='source ~/.bash_profile'
 
 alias pg.start='pg_ctl start'
