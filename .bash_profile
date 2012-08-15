@@ -59,8 +59,11 @@ function ssh-setup {
 }
 
 # alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias dotfiles.bash_profile=='sublime ~/.bash_profile'
-alias dotfiles.autotest='sublime ~/.autotest'
+
+dotfiles.open(){
+  eval "sublime ~/.$1"
+}
+
 alias dotfiles.push='cd ~/ && git commit -am "updating dot files" && git push origin master'
 alias reload='source ~/.bash_profile'
 
@@ -119,10 +122,12 @@ rpm.console.find_account(){
   eval "account = load_account($1)"
 }
 
+# test
+alias test.autotest="autotest -fc"
+
 bash-commands(){
   echo "dotfiles"
-  echo "|__ dotfiles.bash_profile ................ edit your bash profile"
-  echo "|__ dotfiles.autotest .................... edit your autotest file"
+  echo "|__ dotfiles.open [file] ................. edit a dotfile"
   echo "|__ dotfiles.push ........................ push dotfiles to github"
   echo ""
   echo "ssh-setup ................................ cat your ssh file"
@@ -163,7 +168,7 @@ bash-commands(){
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"
-  echo "|__ test.autotest ........................ start autotest"
+  echo "|__ test.autotest ........................ start autotest -fc"
 }
 
 

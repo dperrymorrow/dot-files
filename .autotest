@@ -1,0 +1,25 @@
+# require 'autotest/fsevent'
+require 'autotest/growl'
+require 'redgreen/autotest' unless ENV['RSPEC']
+
+Autotest::Growl::show_modified_files = true
+Autotest::Growl::remote_notification = true
+
+#require 'autotest/html_report'
+#require 'autotest/kdenotify'
+#require 'autotest/menu'
+#require 'autotest/pretty'
+#require 'autotest/snarl'
+
+def growl(title, msg, pri=0, stick="", image="")
+  image_arg = (!image.empty?) ? "--image #{image}" : ""
+  system "growlnotify -n autotest #{image_arg} -p #{pri} -m #{msg.inspect} #{title} #{stick}"
+end
+
+Autotest.add_hook :red do |at|
+  growl("Tests Failed", "#{at.files_to_test.size} tests failed", 2, "", "/Applications/Mail.app/Contents/Resources/Caution.tiff")
+end
+
+Autotest.add_hook :green do |at|
+  growl("Tests Passed", "All tests passed", -2, "", "/Applications/Mail.app/Contents/Resources/certificate.tiff") #if at.tainted
+end
