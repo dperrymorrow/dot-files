@@ -59,8 +59,10 @@ function ssh-setup {
 }
 
 # alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias dotfiles.bash_profile=='sublime ~/.bash_profile'
+alias dotfiles.autotest='sublime ~/.autotest'
+alias dotfiles.push='cd ~/ && git commit -am "updating dot files"'
 alias reload='source ~/.bash_profile'
-alias edit-bash='sublime ~/.bash_profile'
 
 alias pg.start='pg_ctl start'
 alias pg.running='ps aux | grep postgres'
@@ -92,9 +94,7 @@ git.branch.push(){
 alias rails.stop='killall -9 rails'
 alias rails.zapdb='rake db:drop db:create db:migrate db:seed'
 
-alias test.edit_autotest='sublime ~/.autotest'
 # new relic aliases
-
 alias rpm.dir="cd ~/newrelic/rpm_site"
 alias rpm.debug_layout="rpm.dir &&
 echo '/
@@ -120,6 +120,11 @@ rpm.console.find_account(){
 }
 
 bash-commands(){
+  echo "dotfiles"
+  echo "|__ dotfiles.bash_profile ................ edit your bash profile"
+  echo "|__ dotfiles.autotest .................... edit your autotest file"
+  echo "|__ dotfiles.push ........................ push dotfiles to github"
+  echo ""
   echo "ssh-setup ................................ cat your ssh file"
   echo ""
   echo "Postgres"
@@ -158,7 +163,7 @@ bash-commands(){
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"
-  echo "|__ test.edit_autotest ................... edit the autotest . file"
+  echo "|__ test.autotest ........................ start autotest"
 }
 
 
