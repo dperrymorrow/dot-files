@@ -1,9 +1,13 @@
 # require 'autotest/fsevent'
-require 'autotest/growl'
+# require 'autotest/growl'
 require 'redgreen/autotest' unless ENV['RSPEC']
 
-Autotest::Growl::show_modified_files = true
-Autotest::Growl::remote_notification = true
+# Autotest::Growl::show_modified_files = true
+# Autotest::Growl::remote_notification = true
+# Autotest::Growl::sticky_failure_notifications = true
+# Autotest::Growl::one_notification_per_run = true
+
+# ActiveSupport::Deprecation.silenced = true
 
 #require 'autotest/html_report'
 #require 'autotest/kdenotify'
@@ -11,15 +15,26 @@ Autotest::Growl::remote_notification = true
 #require 'autotest/pretty'
 #require 'autotest/snarl'
 
-def growl(title, msg, pri=0, stick="", image="")
-  image_arg = (!image.empty?) ? "--image #{image}" : ""
-  system "growlnotify -n autotest #{image_arg} -p #{pri} -m #{msg.inspect} #{title} #{stick}"
-end
+# class Autotest
+#   # run tests over drb server (spork)
+#   def make_test_cmd files_to_test
+#     if files_to_test.empty?
+#       "" # no tests to run
+#     else
+#       "bin/testdrb #{files_to_test.keys.join(' ')}"
+#     end
+#   end
+# end
 
-Autotest.add_hook :red do |at|
-  growl("Tests Failed", "#{at.files_to_test.size} tests failed", 2, "", "/Applications/Mail.app/Contents/Resources/Caution.tiff")
-end
 
-Autotest.add_hook :green do |at|
-  growl("Tests Passed", "All tests passed", -2, "", "/Applications/Mail.app/Contents/Resources/certificate.tiff") #if at.tainted
-end
+# def growl(title, msg, pri=0, stick="")
+#   system "growlnotify -n autotest  -p #{pri} -m #{msg.inspect} #{title} #{stick}"
+# end
+
+# Autotest.add_hook :red do |at|
+#   growl("Tests Failed", "#{at.files_to_test.size} tests failed", 2, "")
+# end
+
+# Autotest.add_hook :green do |at|
+#   growl("Tests Passed", "All tests passed", -2, "") #if at.tainted
+# end

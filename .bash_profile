@@ -123,7 +123,7 @@ rpm.console.find_account(){
 }
 
 # test
-alias test.autotest="autotest -fc"
+alias test.autotest="autotest -f -c"
 
 bash-commands(){
   echo "dotfiles"
@@ -168,7 +168,7 @@ bash-commands(){
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"
-  echo "|__ test.autotest ........................ start autotest -fc"
+  echo "|__ test.autotest ........................ start autotest -f -c"
 }
 
 
