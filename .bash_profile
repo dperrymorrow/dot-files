@@ -122,6 +122,8 @@ rpm.console.find_account(){
   eval "account = load_account($1)"
 }
 
+alias edit-bash="dotfiles.open bash_profile"
+
 # test
 alias test.autotest="autotest -f -c"
 
@@ -165,6 +167,7 @@ bash-commands(){
   echo "|__ rpm.server.start [environment] ....... start the RPM app with specified environment"
   echo "|__ rpm.console.start [environment] ...... start the RPM console with specified environment"
   echo "|__ rpm.console.model_methods [model] .... get the sorted methods for a model"
+  echo "|__ rpm.debug_layout ..................... find the controller/action for a page"
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"

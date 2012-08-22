@@ -11,6 +11,7 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
 :help
 :args .
 :q
@@ -59,15 +60,16 @@ $
 	ed using the  c$  command.
 
 # File marks:
-'0  49  16  /usr/share/vim/vim73/doc/help.txt
-'1  150  0  /usr/share/vim/vim73/doc/options.txt
-'2  153  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorOJ1k5n
-'3  159  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
-'4  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
-'5  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
+'0  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
+'1  49  16  /usr/share/vim/vim73/doc/help.txt
+'2  150  0  /usr/share/vim/vim73/doc/options.txt
+'3  153  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorOJ1k5n
+'4  159  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
+'5  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 '6  92  19  /usr/share/vim/vim73/doc/help.txt
 
 # Jumplist (newest first):
+-'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  49  16  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  8  0  ~/newrelic/rpm_site
@@ -84,7 +86,6 @@ $
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
 -'  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
--'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
@@ -106,7 +107,6 @@ $
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
 -'  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
--'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
@@ -128,7 +128,6 @@ $
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
 -'  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
--'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
@@ -150,7 +149,6 @@ $
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
 -'  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 -'  1  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
--'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
@@ -158,9 +156,20 @@ $
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  92  19  /usr/share/vim/vim73/doc/help.txt
+-'  1  0  /usr/share/vim/vim73/doc/help.txt
+-'  49  16  /usr/share/vim/vim73/doc/help.txt
+-'  1  0  /usr/share/vim/vim73/doc/help.txt
+-'  8  0  ~/newrelic/rpm_site
+-'  150  0  /usr/share/vim/vim73/doc/options.txt
+-'  1  0  /usr/share/vim/vim73/doc/options.txt
+-'  8046  1  /usr/share/vim/vim73/doc/options.txt
+-'  49  16  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 
 # History of marks within files (newest to oldest):
+
+> ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
+	"	1	0
 
 > /usr/share/vim/vim73/doc/help.txt
 	"	49	16
@@ -207,6 +216,3 @@ $
 
 > /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
 	"	71	15
-
-> ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
-	"	1	0
