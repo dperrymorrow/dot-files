@@ -144,7 +144,7 @@ bash-commands(){
   echo ""
   echo "Git"
   echo "|__ git.stash_pull ....................... stash, pull with rebase, and pop"
-  echo "|__ git.create.branch [branch_name] ...... create a branch, and check it out"
+  echo "|__ git.branch.create [branch_name] ...... create a branch, and check it out"
   echo "|__ git.branch.push [branch_name] ........ push a local branch to remote"
   echo ""
   echo "Ruby On Rails"
