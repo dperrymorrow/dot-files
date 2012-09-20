@@ -165,11 +165,15 @@ $
 -'  8046  1  /usr/share/vim/vim73/doc/options.txt
 -'  49  16  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
+-'  49  16  /usr/share/vim/vim73/doc/help.txt
+-'  1  0  /usr/share/vim/vim73/doc/help.txt
 
 # History of marks within files (newest to oldest):
 
 > ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
-	"	1	0
+	"	1	5
+	.	1	4
+	+	1	4
 
 > /usr/share/vim/vim73/doc/help.txt
 	"	49	16

@@ -109,11 +109,18 @@ echo '/
 alias rpm.mate="rpm.dir && mate ."
 alias rpm.clear_assets="rpm.dir && find public/assets -type f -exec rm {} \;"
 
+
+test.file(){
+  eval "ruby -Itest:lib test/functional/$1_test.rb"
+}
+
 rpm.server.start(){
-  eval "script/server thin -e $1"
+  eval "./script/server thin -e $1"
+  # eval "script/server thin -e $1"
 }
 rpm.console.start(){
-  eval "RAILS_ENV=$1 ruby script/console"
+  eval "RAILS_ENV=$1 ruby ./script/console"
+  # eval "RAILS_ENV=$1 ruby script/console"
 }
 rpm.console.model_methods(){
   eval "ap ($1.first.methods - Object.methods).sort"
@@ -171,6 +178,7 @@ bash-commands(){
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"
+  echo "|__ test.file ............................ test.file tests/functional/[file].rb"
   echo "|__ test.autotest ........................ start autotest -f -c"
 }
 

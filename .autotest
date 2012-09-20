@@ -1,6 +1,7 @@
 # require 'autotest/fsevent'
 # require 'autotest/growl'
-require 'redgreen/autotest' unless ENV['RSPEC']
+require 'redgreen' 
+#unless ENV['RSPEC']
 
 # Autotest::Growl::show_modified_files = true
 # Autotest::Growl::remote_notification = true
