@@ -110,8 +110,12 @@ alias rpm.mate="rpm.dir && mate ."
 alias rpm.clear_assets="rpm.dir && find public/assets -type f -exec rm {} \;"
 
 
-test.file(){
-  eval "ruby -Itest:lib test/functional/$1_test.rb"
+test.controller(){
+  eval "ruby -Itest:lib test/functional/$1_controller_test.rb"
+}
+
+test.model(){
+  eval "ruby -Itest:lib test/unit/$1_test.rb"
 }
 
 rpm.server.start(){
@@ -178,7 +182,8 @@ bash-commands(){
   echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
   echo ""
   echo "Testing"
-  echo "|__ test.file ............................ test.file tests/functional/[file].rb"
+  echo "|__ test.controller ...................... test.controller [controller]"
+  echo "|__ test.model ........................... test.model [model]"
   echo "|__ test.autotest ........................ start autotest -f -c"
 }
 
