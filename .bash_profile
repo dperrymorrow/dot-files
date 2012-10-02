@@ -67,9 +67,9 @@ dotfiles.open(){
 alias dotfiles.push='cd ~/ && git commit -am "updating dot files" && git push origin master'
 alias reload='source ~/.bash_profile'
 
-alias pg.start='pg_ctl start'
+alias pg.start='pg_ctl -D /usr/local/var/postgres -l logfile start'
 alias pg.running='ps aux | grep postgres'
-alias pg.stop='killall -9 postgres'
+alias pg.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias mysql.stop='killall -9 mysqld'
 
