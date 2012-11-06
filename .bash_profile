@@ -78,6 +78,7 @@ alias sublime.bundles="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packag
 alias sublime.snippets.edit='sublime ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/sublime-snippets'
 alias sublime.snippets.push='cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/sublime-snippets && git add -A && git commit -am "updating snippets" && git push origin master'
 
+alias chrome.customize="sublime ~/Library/Application Support/Google/Chrome/Default/User StyleSheets"
 # textmate
 alias tm.bundles='cd ~/Library/Application\ Support/TextMate/Pristine\ Copy/Bundles/'
 alias tm.2.bundles='open ~/Library/Application\ Support/Avian/Pristine Copy/Bundles/'

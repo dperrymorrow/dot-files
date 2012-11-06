@@ -60,16 +60,20 @@ $
 	ed using the  c$  command.
 
 # File marks:
-'0  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
-'1  49  16  /usr/share/vim/vim73/doc/help.txt
-'2  150  0  /usr/share/vim/vim73/doc/options.txt
-'3  153  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorOJ1k5n
-'4  159  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
-'5  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
-'6  92  19  /usr/share/vim/vim73/doc/help.txt
+'0  1  21  /private/tmp/crontab.eyYkBMuc4u
+'1  1  26  /private/tmp/crontab.o4fiJnzbAs
+'2  1  139  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
+'3  49  16  /usr/share/vim/vim73/doc/help.txt
+'4  150  0  /usr/share/vim/vim73/doc/options.txt
+'5  153  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorOJ1k5n
+'6  159  0  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorS0YSpz
+'7  71  15  /private/var/folders/ml/kqfvq0297jb4_xln3561yyq80000gp/T/tutorrv5whm
+'8  92  19  /usr/share/vim/vim73/doc/help.txt
 
 # Jumplist (newest first):
--'  1  0  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
+-'  1  21  /private/tmp/crontab.eyYkBMuc4u
+-'  1  26  /private/tmp/crontab.o4fiJnzbAs
+-'  1  139  ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
 -'  49  16  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  8  0  ~/newrelic/rpm_site
@@ -163,17 +167,28 @@ $
 -'  150  0  /usr/share/vim/vim73/doc/options.txt
 -'  1  0  /usr/share/vim/vim73/doc/options.txt
 -'  8046  1  /usr/share/vim/vim73/doc/options.txt
--'  49  16  /usr/share/vim/vim73/doc/help.txt
--'  1  0  /usr/share/vim/vim73/doc/help.txt
 -'  49  16  /usr/share/vim/vim73/doc/help.txt
 -'  1  0  /usr/share/vim/vim73/doc/help.txt
 
 # History of marks within files (newest to oldest):
 
+> /private/tmp/crontab.eyYkBMuc4u
+	"	1	21
+	^	1	22
+	.	1	21
+	+	1	21
+
+> /private/tmp/crontab.o4fiJnzbAs
+	"	1	26
+	^	1	27
+	.	1	26
+	+	1	26
+
 > ~/newrelic/rpm_site/.git/COMMIT_EDITMSG
-	"	1	5
-	.	1	4
-	+	1	4
+	"	1	139
+	^	1	140
+	.	1	139
+	+	1	139
 
 > /usr/share/vim/vim73/doc/help.txt
 	"	49	16
