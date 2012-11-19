@@ -95,6 +95,10 @@ git.branch.destroy.local(){
   eval "git branch -d $1"
 }
 
+git.branch.create(){
+  eval "git branch $1 && git checkout $1"
+}
+
 git.branch.push(){
   eval "git push origin $1"
 }
