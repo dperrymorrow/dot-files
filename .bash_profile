@@ -11,6 +11,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PATH=$PATH:~/Documents/ci_git/git_support/bin
 export CC=gcc-4.2
 export cc=gcc-4.2
+export EDITOR='sublime -w'
 
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -86,8 +87,12 @@ alias tm.2.bundles='open ~/Library/Application\ Support/Avian/Pristine Copy/Bund
 # git
 alias git.stash_pull="git stash && git pull --rebase && git stash pop"
 
-git.branch.create(){
-  eval "git branch $1 && git checkout $1"
+git.branch.destroy.remote(){
+  eval "git push origin --delete $1"
+}
+
+git.branch.destroy.local(){
+  eval "git branch -d $1"
 }
 
 git.branch.push(){
@@ -156,8 +161,10 @@ bash-commands(){
   echo ""
   echo "Git"
   echo "|__ git.stash_pull ....................... stash, pull with rebase, and pop"
-  echo "|__ git.branch.create [branch_name] ...... create a branch, and check it out"
-  echo "|__ git.branch.push [branch_name] ........ push a local branch to remote"
+  echo "|__ git.branch.create [name] ............. create a branch, and check it out"
+  echo "|__ git.branch.push [name] ............... push a local branch to remote"
+  echo "|__ git.branch.destroy.local [name] ...... destroy a local branch"
+  echo "|__ git.branch.destroy.remote [name] ..... destroy a remote branch"
   echo ""
   echo "Ruby On Rails"
   echo "|__ rails.zapdb .......................... drop, create, migrate, seed"
