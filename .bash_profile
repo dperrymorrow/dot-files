@@ -86,6 +86,7 @@ alias tm.2.bundles='open ~/Library/Application\ Support/Avian/Pristine Copy/Bund
 
 # git
 alias git.stash_pull="git stash && git pull --rebase && git stash pop"
+alias git.fetch_upstream="git pull --rebase origin master"
 
 git.branch.destroy.remote(){
   eval "git push origin --delete $1"
@@ -164,6 +165,7 @@ bash-commands(){
   echo "|__ mysql.stop ........................... kill mysql processes"
   echo ""
   echo "Git"
+  echo "|__ git.fetch_upstream ................... pull from master into your branch"
   echo "|__ git.stash_pull ....................... stash, pull with rebase, and pop"
   echo "|__ git.branch.create [name] ............. create a branch, and check it out"
   echo "|__ git.branch.push [name] ............... push a local branch to remote"
