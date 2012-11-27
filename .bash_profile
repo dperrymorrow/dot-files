@@ -18,11 +18,6 @@ function parse_git_branch {
   echo " "${ref#refs/heads/}" "
 }
 
-function parse_git_branch {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo " "${ref#refs/heads/}" "
-}
-
 function rvm_version {
   local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
   [ "$gemset" != "" ] && gemset="@$gemset"
@@ -112,7 +107,8 @@ alias rails.zapdb='rake db:drop db:create db:migrate db:seed'
 # new relic aliases
 alias rpm.dir="cd ~/newrelic/rpm_site"
 alias rpm.debug_layout="rpm.dir &&
-echo '/
+echo '
+/
   controller:
   =params[:controller]' >> app/views/layouts/application.html.haml &&
   echo '  action:
