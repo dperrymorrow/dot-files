@@ -75,6 +75,7 @@ alias pg.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias mysql.stop='killall -9 mysqld'
 
 # sublime
+alias sublime.packages="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 alias sublime.bundles="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 alias sublime.snippets.edit='sublime ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/sublime-snippets'
 alias sublime.snippets.push='cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/sublime-snippets && git add -A && git commit -am "updating snippets" && git push origin master'
@@ -180,6 +181,7 @@ bash-commands(){
   echo "edit-bash ................................ edit the bash profile file in sublime"
   echo ""
   echo "Sublime"
+  echo "|__ sublime.packages ..................... cd into sublime packages"
   echo "|__ sublime.bundles ...................... cd into sublime bundles folder"
   echo "|__ sublime.snippets.edit ................ open snippets in editor"
   echo "|__ sublime.snippets.push ................ push snippets to github"
