@@ -69,6 +69,8 @@ alias pg.stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias mysql.stop='killall -9 mysqld'
 
+alias mongo.start='mongod'
+
 # sublime
 alias sublime.packages="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 alias sublime.bundles="cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages"
@@ -102,8 +104,9 @@ git.branch.push(){
 
 # rails
 alias rails.stop='killall -9 rails'
+alias rails.precompile="RAILS_ENV=production bundle exec rake assets:precompile"
 alias rails.zapdb='rake db:drop db:create db:migrate db:seed'
-
+alias rpm.stop_collector="rpm.dir && cd java_collector/bin && ruby control_script.rb stop"
 # new relic aliases
 alias rpm.dir="cd ~/newrelic/rpm_site"
 alias rpm.debug_layout="rpm.dir &&
@@ -127,12 +130,10 @@ test.model(){
 }
 
 rpm.server.start(){
-  eval "./script/server thin -e $1"
-  # eval "script/server thin -e $1"
+  eval "rails s -e $1"
 }
 rpm.console.start(){
-  eval "RAILS_ENV=$1 ruby ./script/console"
-  # eval "RAILS_ENV=$1 ruby script/console"
+  eval "rails console $1"
 }
 rpm.console.model_methods(){
   eval "ap ($1.first.methods - Object.methods).sort"
@@ -148,58 +149,48 @@ alias test.autotest="autotest -f -c"
 
 bash-commands(){
   echo "dotfiles"
-  echo "|__ dotfiles.open [file] ................. edit a dotfile"
-  echo "|__ dotfiles.push ........................ push dotfiles to github"
-  echo ""
-  echo "ssh-setup ................................ cat your ssh file"
-  echo ""
+  echo "|__ dotfiles.open [file]              => edit a dotfile"
+  echo "|__ dotfiles.push                     => push dotfiles to github"
+  echo "ssh-setup                             => cat your ssh file"
   echo "Postgres"
-  echo "|__ pg.start ............................. start postrgres"
-  echo "|__ pg.running ........................... is postgres running?"
-  echo "|__ pg.stop .............................. kill postgres processes"
-  echo ""
+  echo "|__ pg.start                          => start postrgres"
+  echo "|__ pg.running                        => is postgres running?"
+  echo "|__ pg.stop                           => kill postgres processes"
+  echo "Mongo"
+  echo "|__ mongo.start                       => start mongo db "
   echo "MySql"
-  echo "|__ mysql.stop ........................... kill mysql processes"
-  echo ""
+  echo "|__ mysql.stop                        => kill mysql processes"
   echo "Git"
-  echo "|__ git.fetch_upstream ................... pull from master into your branch"
-  echo "|__ git.stash_pull ....................... stash, pull with rebase, and pop"
-  echo "|__ git.branch.create [name] ............. create a branch, and check it out"
-  echo "|__ git.branch.push [name] ............... push a local branch to remote"
-  echo "|__ git.branch.destroy.local [name] ...... destroy a local branch"
-  echo "|__ git.branch.destroy.remote [name] ..... destroy a remote branch"
-  echo ""
+  echo "|__ git.fetch_upstream                => pull from master into your branch"
+  echo "|__ git.stash_pull                    => stash, pull with rebase, and pop"
+  echo "|__ git.branch.create [name]          => create a branch, and check it out"
+  echo "|__ git.branch.push [name]            => push a local branch to remote"
+  echo "|__ git.branch.destroy.local [name]   => destroy a local branch"
+  echo "|__ git.branch.destroy.remote [name]  => destroy a remote branch"
   echo "Ruby On Rails"
-  echo "|__ rails.zapdb .......................... drop, create, migrate, seed"
-  echo "|__ rails.stop ........................... kill rails processes"
-  echo ""
-  echo "reload ................................... reload the bash profile after changes"
-  echo "edit-bash ................................ edit the bash profile file in sublime"
-  echo ""
+  echo "|__ rails.zapdb                       => drop, create, migrate, seed"
+  echo "|__ rails.stop                        => kill rails processes"
+  echo "|__ rails.precompile                  => precompile assets"
+  echo "Bash"
+  echo "|__ reload                            => reload the bash profile after changes"
+  echo "|__ edit-bash                         => edit the bash profile file in sublime"
   echo "Sublime"
-  echo "|__ sublime.packages ..................... cd into sublime packages"
-  echo "|__ sublime.bundles ...................... cd into sublime bundles folder"
-  echo "|__ sublime.snippets.edit ................ open snippets in editor"
-  echo "|__ sublime.snippets.push ................ push snippets to github"
-  echo ""
+  echo "|__ sublime.packages                  => cd into sublime packages"
+  echo "|__ sublime.bundles                   => cd into sublime bundles folder"
+  echo "|__ sublime.snippets.edit             => open snippets in editor"
+  echo "|__ sublime.snippets.push             => push snippets to github"
   echo "Textmate"
-  echo "|__ tm.bundles ........................... Edit textmate bundles"
-  echo "|__ tm.2.Bundles ......................... Edit textmate 2 bundles"
-  echo ""
+  echo "|__ tm.bundles                        => Edit textmate bundles"
+  echo "|__ tm.2.Bundles                      => Edit textmate 2 bundles"
   echo "RPM"
-  echo "|__ rpm.server.start [environment] ....... start the RPM app with specified environment"
-  echo "|__ rpm.console.start [environment] ...... start the RPM console with specified environment"
-  echo "|__ rpm.console.model_methods [model] .... get the sorted methods for a model"
-  echo "|__ rpm.debug_layout ..................... find the controller/action for a page"
-  echo "|__ rpm.console.find_account [id] ........ find the account on whatever shard its on"
-  echo ""
+  echo "|__ rpm.server.start [environment]    => start the RPM app with specified environment"
+  echo "|__ rpm.console.start [environment]   => start the RPM console with specified environment"
+  echo "|__ rpm.console.model_methods [model] => get the sorted methods for a model"
+  echo "|__ rpm.debug_layout                  => find the controller/action for a page"
+  echo "|__ rpm.console.find_account [id]     => find the account on whatever shard its on"
   echo "Testing"
-  echo "|__ test.controller ...................... test.controller [controller]"
-  echo "|__ test.model ........................... test.model [model]"
-  echo "|__ test.autotest ........................ start autotest -f -c"
+  echo "|__ test.controller                   => test.controller [controller]"
+  echo "|__ test.model                        => test.model [model]"
+  echo "|__ test.autotest                     => start autotest -f -c"
 }
 
-
-
-# rm /usr/local/var/postgres/postmaster.pid
-# alias pg_ctl start
