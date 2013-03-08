@@ -107,6 +107,7 @@ alias rails.stop='killall -9 rails'
 alias rails.precompile="RAILS_ENV=production bundle exec rake assets:precompile"
 alias rails.zapdb='rake db:drop db:create db:migrate db:seed'
 alias rpm.stop_collector="rpm.dir && cd java_collector/bin && ruby control_script.rb stop"
+alias rpm.test_license="ruby -Ilib:test test/integration/validate_licenses_test.rb"
 # new relic aliases
 alias rpm.dir="cd ~/newrelic/rpm_site"
 alias rpm.debug_layout="rpm.dir &&
@@ -183,6 +184,7 @@ bash-commands(){
   echo "|__ tm.bundles                        => Edit textmate bundles"
   echo "|__ tm.2.Bundles                      => Edit textmate 2 bundles"
   echo "RPM"
+  echo "|__ rpm.test_license                  => test the license file"
   echo "|__ rpm.server.start [environment]    => start the RPM app with specified environment"
   echo "|__ rpm.console.start [environment]   => start the RPM console with specified environment"
   echo "|__ rpm.console.model_methods [model] => get the sorted methods for a model"
@@ -194,3 +196,12 @@ bash-commands(){
   echo "|__ test.autotest                     => start autotest -f -c"
 }
 
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
