@@ -175,6 +175,7 @@ bash-commands(){
   echo "Bash"
   echo "|__ reload                            => reload the bash profile after changes"
   echo "|__ edit-bash                         => edit the bash profile file in sublime"
+  echo "|__ chrome.customize                  => open stylesheets for chrome console in sublime "
   echo "Sublime"
   echo "|__ sublime.packages                  => cd into sublime packages"
   echo "|__ sublime.bundles                   => cd into sublime bundles folder"
