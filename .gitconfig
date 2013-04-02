@@ -1,6 +1,6 @@
 [user]
 	name = David Morrow
-	email = dmorrow@newrelic.com
+	email = dperrymorrow@gmail.com
 	autosetuprebase = always
 
 [difftool "Kaleidoscope"]
@@ -16,3 +16,5 @@
 	prompt = false
 [merge]
 	tool = Kaleidoscope
+[heroku]
+	account = personal
