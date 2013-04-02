@@ -145,6 +145,11 @@ rpm.console.find_account(){
 }
 
 alias measureful.load_db="curl -o /tmp/latest.dump `heroku pgbackups:url --app measureful` && pg_restore --verbose --clean --no-acl --no-owner -d measureful /tmp/latest.dump"
+
+measureful.run_report(){
+  eval "AnalyzerRunner.new(Report.find($1), :month, {}).run"
+}
+
 alias edit-bash="dotfiles.open bash_profile"
 
 # test
@@ -183,7 +188,9 @@ bash-commands(){
   echo "|__ sublime.bundles                   => cd into sublime bundles folder"
   echo "|__ sublime.snippets.edit             => open snippets in editor"
   echo "|__ sublime.snippets.push             => push snippets to github"
+  echo "Measureful"
   echo "|__ measureful.load_db                => pull data from production into dev db"
+  echo "|__ measureful.run_report [report_id] => rerun background task for report"
   echo "Textmate"
   echo "|__ tm.bundles                        => Edit textmate bundles"
   echo "|__ tm.2.Bundles                      => Edit textmate 2 bundles"
