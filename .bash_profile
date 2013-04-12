@@ -55,7 +55,7 @@ function ssh-setup {
   cat ~/.ssh/id_rsa.pub | ssh $1 'cat - >> ~/.ssh/authorized_keys'
 }
 
-# alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
 dotfiles.open(){
   eval "sublime ~/.$1"
@@ -121,7 +121,7 @@ echo '
 
 alias rpm.mate="rpm.dir && mate ."
 alias rpm.clear_assets="rpm.dir && find public/assets -type f -exec rm {} \;"
-
+alias measureful.resque="rake environment resque:work QUEUE=*"
 
 test.controller(){
   eval "ruby -Itest:lib test/functional/$1_controller_test.rb"
@@ -143,13 +143,18 @@ rpm.console.model_methods(){
 rpm.console.find_account(){
   eval "account = load_account($1)"
 }
-
-alias measureful.load_db="curl -o /tmp/latest.dump `heroku pgbackups:url --app measureful` && pg_restore --verbose --clean --no-acl --no-owner -d measureful /tmp/latest.dump"
+measureful.get_db(){
+  eval "curl -o /tmp/latest.dump `heroku pgbackups:url --app $1`"
+}
+measureful.backup(){
+  eval "heroku pgbackups:capture --expire --app $1"
+}
 
 measureful.run_report(){
   eval "AnalyzerRunner.new(Report.find($1), :month, {}).run"
 }
 
+alias measureful.restore_db="pg_restore --verbose --clean --no-acl --no-owner -d measureful /tmp/latest.dump"
 alias edit-bash="dotfiles.open bash_profile"
 
 # test
@@ -189,7 +194,9 @@ bash-commands(){
   echo "|__ sublime.snippets.edit             => open snippets in editor"
   echo "|__ sublime.snippets.push             => push snippets to github"
   echo "Measureful"
-  echo "|__ measureful.load_db                => pull data from production into dev db"
+  echo "|__ measureful.get_db [app_name]      => pull data from heroku"
+  echo "|__ measureful.backup [app_name]      => backup pg on heroku"
+  echo "|__ measureful.restore_db             => load db dumb into local"
   echo "|__ measureful.run_report [report_id] => rerun background task for report"
   echo "Textmate"
   echo "|__ tm.bundles                        => Edit textmate bundles"
